@@ -1,0 +1,18 @@
+services:
+  words:
+    build: 
+      context: .
+      dockerfile: ./images/words.dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      STORE_KIND: postgres
+  db:
+    build:
+      context: .
+      dockerfile: ./images/db.dockerfile
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: secret
