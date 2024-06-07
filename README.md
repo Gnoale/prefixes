@@ -1,5 +1,15 @@
 # Prefix API server
 
+The idea is to provide an API that answer with the most words occurrences matching a prefix.
+
+- Example
+
+`POST /words/bestfriend`
+`POST /words/bestfry`
+`POST /words/bestfry`
+
+`GET /words/best` returns `{"word":"bestfry", "count":2}`
+
 ## Launch the server
 
 `docker compose up` 
